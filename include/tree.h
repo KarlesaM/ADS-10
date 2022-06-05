@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+
 class Tree {
  private:
     struct Node {
@@ -12,6 +13,7 @@ class Tree {
       std::vector <Node*> childs;
     };
     Node* root;
+
     void createTree(Node* root, std::vector<char> numbers) {
       if (!numbers.size()) {
         return;
@@ -27,6 +29,7 @@ class Tree {
         createTree(root->childs[a], numbers);
       }
     }
+
     std::vector<std::vector<char>> all_perm;
 
     void count_all_perm(Node* root, std::vector<char> temp) {
@@ -37,10 +40,11 @@ class Tree {
         all_perm.push_back(temp);
         return;
       }
-      for (int a = 0; a < root->childs.size(); a++) {
+      for (int a = 0; i < root->childs.size(); a++) {
         count_all_perm(root->childs[a], temp);
       }
     }
+
  public:
     std::vector<char> get_perm(int a) const {
       std::vector<char> empt;
