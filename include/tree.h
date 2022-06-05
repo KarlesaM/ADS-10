@@ -40,7 +40,7 @@ class Tree {
         all_perm.push_back(temp);
         return;
       }
-      for (int a = 0; i < root->childs.size(); a++) {
+      for (int a = 0; a < root->childs.size(); a++) {
         count_all_perm(root->childs[a], temp);
       }
     }
